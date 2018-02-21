@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded" , function(event) {
 
 		var number2 = event.target.innerHTML;
 
-		console.log(number1);
+		console.log("Number 1: " + number1); // should show the first number in the console
 	});
 }
 
@@ -38,17 +38,23 @@ var operation = document.getElementsByClassName("operator");
 		document.getElementById("screen").innerHTML = event.target.innerHTML;
 
 		var operatorclick = event.target.innerHTML;
-		console.log(operatorclick);
+		//console.log(operatorclick);
+
 	});
 }
 
 var equal = document.getElementsByClassName("equals");
 	for(var i = 0; i < equal.length; i++) {
 		equal[i].addEventListener("click", function (event) {
+		document.getElementById("screen").innerHTML = event.target.innerHTML;
 
-			
+		var equalbutton = event.target.innerHTML;
 
-		console.log(equal);
 	});
+		if(operatorclick=="+" && equalbutton=="=") {
+				total=number1+number2;
+			}
+
+		//console.log(total);
 }
 });
