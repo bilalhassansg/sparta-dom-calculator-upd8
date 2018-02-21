@@ -1,33 +1,38 @@
-// console.log("jhdkqw");
-
-// document.addEventListener("DOMContentLoad" , function(event) {
-// 	var num7 = document.querySelectorAll(".buttonNum");
-
-// 	for(var i = 0; i < num7.length; i++) {
-// 		num7[i].addEventListener("click", function (event) {
-// 		console.log(num7[i]);
-// 		alert(event)
-// 		});
-// 	}
-// });
-
 var number1; // first number clicked 
 var number2; // second number clicked 
 var operatorclick; // operator used to make calculation
 var total; // include a total of the sum, but make empty
 
-document.addEventListener("DOMContentLoaded" , function(event) {
-	var number = document.getElementsByClassName("buttonNum");
+// GET THE FIRST NUMBER
 
-	for(var i = 0; i < number.length; i++) {
-		number[i].addEventListener("click", function (event) {
+document.addEventListener("DOMContentLoaded" , function(event) {
+	var number1 = document.getElementsByClassName("buttonNum");
+
+	for(var i = 0; i < number1.length; i++) {
+		number1[i].addEventListener("click", function (event) {
 		document.getElementById("screen").innerHTML = event.target.innerHTML;
 
-		var number1 = event.target.innerHTML;
+		var number1val = event.target.innerHTML;
 
-		var number2 = event.target.innerHTML;
+		//var number2 = new event.target.innerHTML;
 
-		console.log("Number 1: " + number1); // should show the first number in the console
+		console.log("Number 1: " + number1val); // should show the first number in the console
+	});
+}
+
+// GET THE SECOND NUMBER
+
+var number2 = document.getElementsByClassName("buttonNum");
+
+	for(var i = 0; i < number2.length; i++) {
+		number2[i].addEventListener("click", function(event) {
+		document.getElementById("screen").innerHTML = event.target.innerHTML;
+
+		var number2val = event.target.innerHTML;
+
+		//var number2 = new event.target.innerHTML;
+
+		console.log("Number 2: " + number2val); // should show the first number in the console
 	});
 }
 
@@ -40,6 +45,7 @@ var operation = document.getElementsByClassName("operator");
 		var operatorclick = event.target.innerHTML;
 		//console.log(operatorclick);
 
+		number2 = event.target.innerHTML;
 	});
 }
 
@@ -51,10 +57,8 @@ var equal = document.getElementsByClassName("equals");
 		var equalbutton = event.target.innerHTML;
 
 	});
-		if(operatorclick=="+" && equalbutton=="=") {
-				total=number1+number2;
-			}
 
 		//console.log(total);
 }
+
 });
